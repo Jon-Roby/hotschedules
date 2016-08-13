@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <title>front end take home</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600" rel="stylesheet">
+
+</head>
+<body ng-app='takeHomeApp'>
+    <div ng-controller='TakeHomeController'>
+      <nav><img src="https://corp-cdn.hotschedules.com/files/hs_logonew_final_color.png" alt="HotSchedules"></nav>
+      <visualize-data></visualize-data>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js'></script>
+    <script>
+        (function(){
+            angular.module('takeHomeApp', ['chart.js']);
+        })();
+
+       (function(){
+           function controller($scope, $http) {
+              $http.get('SalesTransactions.json')
+               .then(function(response) {
+                   $scope.SalesTransactionData = response.data;
+                   $scope.$broadcast('receivedData', {
+                     SalesTransactionData: response.data
+                   });
+               });
+           };
+           angular.module('takeHomeApp').controller('TakeHomeController', controller);
+       })()
+
+    </script>
+    <script src='transform.factory.js'></script>
+    <script src='visualize.directive.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.bundle.js'></script>
+    <script src='https://cdn.jsdelivr.net/angular.chartjs/1.0.0/angular-chart.min.js'></script>
+
+
+</body>
+</html>
