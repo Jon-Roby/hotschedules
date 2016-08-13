@@ -1,0 +1,47 @@
+body {
+  margin: auto;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 'Semi-Bold';
+}
+
+nav {
+  width: 1000px;
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid #555555;
+  margin-bottom: 40px;
+}
+
+img {
+  margin: 25px 0 25px 15px;
+  width: 255px;
+}
+
+#base {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#title {
+  align-self: center;
+}
+
+#horizontal {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#x-axis {
+  align-self: center;
+}
+
+#y-axis {
+  align-self: center;
+}
+
+canvas {
+  padding: 2em;
+}
