@@ -1,15 +1,17 @@
-## Notes
+# Notes
 
-# Tentative Assumptions
-1. I wasn't able to access $scope.$parent.SalesTransactionData in visualize.directive.js. I suspect the reason is because SalesTransactions.json is requested asynchronously with $http, and the code in visual.directive.js isn't run again when the data is received in the parent scope. (Somewhat surprisingly, when I console.log($scope.$parent) in visual.directive.js, I can click on the SalesTransactionData object in Chrome dev tools. But when I console.log($scope.$parent.SalesTransactionData), I receive undefined. ???). For now, I just $broadcast the data once it's received to the child. If there is a better solution, I can modify accordingly.
+## Tentative Assumptions
+1. I wasn't able to access $scope.$parent.SalesTransactionData in visualize.directive.js. I suspect the reason is because SalesTransactions.json is requested asynchronously with $http, and the code in visual.directive.js isn't run again when the data is received in the parent scope. (Somewhat surprisingly, when I console.log($scope.$parent) in visual.directive.js, I can click on the SalesTransactionData object in Chrome dev tools. But when I console.log($scope.$parent.SalesTransactionData), I receive undefined. ???). For now, I just $broadcast the data down to the child. If there is a better solution, I can modify accordingly.
 
 2. net_total.value is presumably given in cents (and scale at 2 indicates the decimal place?). So 3445 is $34.45.
 
-# Display
+3. I used webpack-dev-server, rather than http-server, since the latter wasn't updating my files anytime I made a change.
 
-3. I used used the Raleway Google font, which HotSchedules using on the landing page for body text.
+## Display
 
-4. I used Angular Chart for display. It surprisingly doesn't allow you to name the x and y axes (out of the box), so for this assignment, I just used flexbox to show them, as well as for the title.  
+1. I used used the Raleway Google font, which HotSchedules uses on the landing page for body text.
+
+2. I used Angular Chart for display. It surprisingly doesn't allow you to name the x and y axes (out of the box), so for this assignment, I just used flexbox to show them, as well as for the title.  
 
 ## Hot Schedules Front End Software Engineer Takehome project
 
