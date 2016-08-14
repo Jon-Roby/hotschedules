@@ -54,8 +54,8 @@
             // iterate through employees object and assign ids to the average amount for each employee
             Object.keys(employees).forEach(employee => {
               let average = employees[employee].total / employees[employee].guests;
-              
-              // Obtain the average and divide by 100 to move the decimal places to the right
+
+              // Obtain the average and divide by 100 to move the decimal two places to the right
               employees[employee] = Math.floor(average)/100;
             });
 
